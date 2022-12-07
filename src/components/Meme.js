@@ -12,7 +12,6 @@ export default function Meme() {
       }
       
     const URL = Data.data.memes[randomNumberInRange(0, 100)].url;
-    console.log(URL)
 
     
     const [isImageActive, setIsImageActive] = useState(false);
@@ -28,8 +27,8 @@ export default function Meme() {
                 <input type="text" className="form--inputs" placeholder="Top text" />
                 <input type="text" className="form--inputs" placeholder="Bottom text" />
                 <button className="form--button" onClick={clickEventHandler}>Get a new meme image 🖼</button>
-                {isImageActive && <img src={URL} alt="meme" />}
+                {isImageActive && <img src={URL} alt="meme" />} 
                 </div>
         </main>
     )
-}
+};
