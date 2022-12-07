@@ -5,19 +5,23 @@ import Data from '../memesData'
 
 
 export default function Meme() {
-    
-    function randomNumberInRange(min, max) {
-        
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-      
-    const URL = Data.data.memes[randomNumberInRange(0, 100)].url;
 
+    const [memeImage, memeImageSet] = useState('');
     
-    const [isImageActive, setIsImageActive] = useState(false);
-        function clickEventHandler() {
-            setIsImageActive(true);
+
+
+      function getMemeImage() {
+
+        const randomNumberInRange = function (max, min) {
+           return Math.floor(Math.random() * (max - min + 1)) + min;
         }
+
+        const URL = Data.data.memes[randomNumberInRange(0, 100)].url;
+        
+        memeImageSet(URL);
+      }
+    
+
     
 
     return (
@@ -26,9 +30,9 @@ export default function Meme() {
                
                 <input type="text" className="form--inputs" placeholder="Top text" />
                 <input type="text" className="form--inputs" placeholder="Bottom text" />
-                <button className="form--button" onClick={clickEventHandler}>Get a new meme image 🖼</button>
-                {isImageActive && <img src={URL} alt="meme" />} 
+                <button className="form--button" onClick={getMemeImage}>Get a new meme image 🖼</button>
                 </div>
+                <img src={memeImage} alt="meme" className="meme--image"/> 
         </main>
     )
 };
