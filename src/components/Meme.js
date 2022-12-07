@@ -32,7 +32,9 @@ export default function Meme() {
                 <input type="text" className="form--inputs" placeholder="Bottom text" />
                 <button className="form--button" onClick={getMemeImage}>Get a new meme image 🖼</button>
                 </div>
+                <div className="meme--image--container">
                 <img src={memeImage} alt="meme" className="meme--image"/> 
+                </div>
         </main>
     )
 };
