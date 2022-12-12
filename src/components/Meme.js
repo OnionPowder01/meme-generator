@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState} from "react";
+
 import Data from '../memesData'
 
 
@@ -22,8 +23,6 @@ export default function Meme() {
       }
     
 
-    
-
     return (
         <main className="meme--container">
             <div className="form">
@@ -33,7 +32,7 @@ export default function Meme() {
                 <button className="form--button" onClick={getMemeImage}>Get a new meme image 🖼</button>
                 </div>
                 <div className="meme--image--container">
-                <img src={memeImage} alt="meme" className="meme--image"/> 
+                {memeImage ? <img src={memeImage} alt="meme" className="meme--image"/> : ''} 
                 </div>
         </main>
     )
