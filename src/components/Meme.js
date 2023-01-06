@@ -1,4 +1,3 @@
-import { waitForElementToBeRemoved } from "@testing-library/react";
 import React from "react";
 import { useState } from "react";
 
@@ -68,10 +67,12 @@ console.log(meme)
 
                 <button className="form--button" onClick={getMemeImage}>Get a new meme image 🖼</button>
                 </div>
+                <div className="hero--container">
                 <div className="meme--image--container">
                 {meme.randomImage ? <img src={meme.randomImage} alt="meme" className="meme--image"/> : ''}
                 <h2 className="meme--text top">{meme.topText}</h2>
                 <h2 className="meme--text bottom">{meme.bottomText}</h2> 
+                </div>
                 </div>
         </main>
     )
