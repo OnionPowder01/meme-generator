@@ -115,6 +115,12 @@ main {
   top: 0 ;
 }
 
+.hero--container {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 600px) {
   main {
     padding: 1em;
